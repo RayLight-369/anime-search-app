@@ -1,5 +1,5 @@
 import "../Utilities/Css/Home.css"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AnimeList from "./AnimeList";
 import Search from "./Search";
 
@@ -9,17 +9,23 @@ export default function Home() {
 
   let [loading, setLoading] = useState(false);
   let [movies, setMovies] = useState([]);
+  let [error, setError] = useState(null);
 
 // https://api.jikan.moe/v4/anime?q=${searchString}
   
   const handleSearchRequest = search => {
+
+    setError(null);
+    setLoading(true);
+
     fetch(`https://www.omdbapi.com/?s=${search}&apikey=${_KEY_}`)
-      .then(res => {
-        setLoading(true);
-        return res.json();
-      })
+      .then(res => res.json())
       .then(response => {
-        setMovies(response.Search);
+        if (response.Response === "True") {
+          setMovies(response.Search);
+        } else {
+          setError(response.Error);
+        }
       })
       .catch(console.log)
       .finally(() => setLoading(false));
@@ -34,7 +40,13 @@ export default function Home() {
     <>
       <h1 id="main" title="Movie-Dict">Movie-Dict</h1>
       <Search handleSearchRequest={handleSearchRequest}/>
-      <AnimeList list={ movies } />
+      { loading && !error ? (
+        <span>Loading . . .</span>
+      ) : error  ? (
+          <p className="error">{ error }</p>
+        ) : (
+        <AnimeList list={ movies } />
+      )}
     </>
   )
 
