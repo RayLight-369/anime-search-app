@@ -1,0 +1,11 @@
+div#anime-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  gap: 50px 10px;
+  width: 96%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}

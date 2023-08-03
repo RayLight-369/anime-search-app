@@ -1,0 +1,36 @@
+div#search-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#search-section input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 5px 5px 5px 10px;
+  width: 70%;
+  height: 100%;
+  background: #eee;
+}
+
+div#search-section input[type="button"] {
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  font-size: 20px;
+  height: 100%;
+  background: #ccc;
+  color: #333;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+div#search-section input[type="button"]:hover {
+  background: #bbb;
+}

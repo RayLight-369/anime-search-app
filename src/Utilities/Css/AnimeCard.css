@@ -1,0 +1,25 @@
+div.anime-card {
+  width: 23vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 593.66px;
+  background: #000;
+}
+
+div.anime-card img {
+  background: #efefef;
+  height: 445px;
+}
+
+div.anime-card div.text-info {
+  padding: 12px;
+  background: #e8e8e8;
+  color: #262626;
+  min-height: 188.66px;
+}
+
+div.anime-card div.text-info * {
+  padding: 3px 0;
+}
