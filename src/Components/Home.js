@@ -32,6 +32,7 @@ export default function Home() {
 
   return (
     <>
+      <h1 id="main" title="Movie-Dict">Movie-Dict</h1>
       <Search handleSearchRequest={handleSearchRequest}/>
       <AnimeList list={ movies } />
     </>

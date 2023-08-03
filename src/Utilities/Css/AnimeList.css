@@ -5,7 +5,7 @@ div#anime-card-container {
   gap: 50px 10px;
   width: 96%;
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   transform: translateX(-50%);
 }
